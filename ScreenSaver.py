@@ -1,4 +1,4 @@
-from random import randint
+﻿from random import randint
 from tkinter import *
 
 class RandomBall:
@@ -75,11 +75,14 @@ class ScreenSaver:
 
 if __name__ == '__main__':
     try:
-        i=open("setting.ini","r")
-        count=i.readline()
+        i=open(".\setting.ini","r")
+        count=int(i.readline())
         i.close()
+        if count>50:
+            count=50
         print(count)
         ScreenSaver(int(count))
+        print("successful")
     except:
         ScreenSaver(18)
 
